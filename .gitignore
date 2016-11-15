@@ -1,0 +1,5 @@
+node_modules
+.idea
+server/built
+client/bower_components
+yarn.lock

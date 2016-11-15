@@ -1,0 +1,43 @@
+<div ng-cloak>
+    <md-toolbar class="md-theme-light">
+    </md-toolbar>
+    <div layout="column" layout-align="center center" style="margin: 10% auto 0">
+        <md-progress-circular md-mode="indeterminate" ng-show="loging" style="position: absolute;left: 650px;top: 300px;z-index: 1;"></md-progress-circular>
+        <md-card style="border-radius: 1%" flex>
+            <md-card-content>
+                <form name="loginForm" ng-submit="login()" novalidate>
+                    <md-input-container class="md-block">
+                        <label>Email</label>
+                        <input required type="email" name="email" ng-model="userLogin.email"
+                               ng-pattern="/^.+@.+\..+$/"/>
+                        <div ng-messages="loginForm.email.$error" role="alert"
+                             ng-show="loginForm.email.$touched || loginForm.email.$dirty">
+                            <div ng-message="required">Email is required.</div>
+                            <div ng-message="pattern">
+                                Your email must look like an e-mail address.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input minlength="6" required name="password" ng-model="userLogin.password" type="password">
+                        <div ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched">
+                            <div ng-message="required">Password is required.</div>
+                            <div ng-message="minlength">Password must be minimun 6 characters long.</div>
+                        </div>
+                    </md-input-container>
+                    <div class="md-block">
+                        <a ui-sref="forgot">Forgot Password?</a>
+                        <!-- <md-button class="md-primary" ng-href="{{googleUrl}}" >Forgot Password</md-button> -->
+                        <md-button class="md-raised md-primary" type="submit">Login</md-button>
+                    </div>
+                </form>
+
+            </md-card-content>
+        </md-card>
+        <div flex>
+            <a ui-sref="signup">Create Account</a>
+        </div>
+
+    </div>
+</div>

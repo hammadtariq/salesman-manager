@@ -1,0 +1,28 @@
+{
+  "name": "salewhat",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material-icons": "~0.6.0",
+    "angular-material": "~1.0.4",
+    "angular-ui-router": "~0.2.17",
+    "angular-animate": "~1.4.9",
+    "angular": "~1.4.9",
+    "angular-aria": "~1.4.9",
+    "bootstrap": "^3.3.6",
+    "geofire": "^3.2.4",
+    "DateJS": "datejs#^1.0.0-rc3",
+    "firebase": "^3.5.2",
+    "angularfire": "^2.1.0"
+  }
+}

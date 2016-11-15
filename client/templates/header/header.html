@@ -1,0 +1,73 @@
+<div ng-cloak>
+    <md-toolbar class="md-theme-light" layout="row" layout-align="center center">
+        <div class="md-toolbar-tools" flex="10">
+            <md-button ng-click="toggleLeft()" class="md-icon-button menu">
+                <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
+            <!--    		<button ng-click="">
+                           <ng-md-icon icon="menu"></ng-md-icon>
+                       </button>	 -->
+        </div>
+        <div class="md-toolbar-tools" layout="row" layout-align="end center">
+            <!-- <ng-md-icon flex="10" icon="menu"  size="40"></ng-md-icon>  -->
+            <div ng-if="token == false" layout-sm="column" layout-wrap layout="row" layout-align="end center">
+                <md-button ui-sref="login"> Login</md-button>
+                <md-button ui-sref="signup"> Sign up</md-button>
+            </div>
+
+            <div ng-if="token == true" layout="row" layout-align="end center" layout-sm="column" layout-wrap>
+                <!-- 				<md-input-container>
+                                    <label>{{profile.name}}</label>
+                                    <md-select ng-model="profile.select">
+                                      <md-option ng-repeat="option in profile.options" value="{{option}}">
+                                        {{option}}
+                                      </md-option>
+                                    </md-select>
+                                  </md-input-container> -->
+                <md-button ng-click="logout()"> Logout</md-button>
+            </div>
+        </div>
+    </md-toolbar>
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left card" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Menu</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <md-content class="md-padding" layout-xs="column" layout="row">
+                    <div flex-xs flex-gt-xs layout="column">
+                        <md-card>
+                            <md-button class=" md-hue-1" ng-click="viewProducts()">Products</md-button>
+                        </md-card>
+                    </div>
+                </md-content>
+                <md-content class="md-padding" layout-xs="column" layout="row">
+                    <div flex-xs flex-gt-xs layout="column">
+                        <md-card>
+                            <md-button class=" md-hue-1" ng-click="viewSalesmen()">Salesman</md-button>
+                        </md-card>
+                    </div>
+                </md-content>
+                <md-content class="md-padding" layout-xs="column" layout="row">
+                    <div flex-xs flex-gt-xs layout="column">
+                        <md-card>
+                            <md-button class=" md-hue-1" ng-click="viewOrders()">Order</md-button>
+                        </md-card>
+                    </div>
+                </md-content>
+                <md-content class="md-padding" layout-xs="column" layout="row">
+                    <div flex-xs flex-gt-xs layout="column">
+                        <md-card>
+                            <md-button class=" md-hue-1" ng-click="logout()">Logout</md-button>
+                        </md-card>
+                    </div>
+                </md-content>
+            </md-content>
+        </md-sidenav>
+        <!-- <md-content flex layout-padding>
+
+                  <div ui-view></div>
+
+        </md-content> -->
+    </section>
+</div>		

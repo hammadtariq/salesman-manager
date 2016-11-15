@@ -1,0 +1,78 @@
+<div ng-cloak>
+    <md-toolbar class="md-theme-light">
+        <div class="md-toolbar-tools" layout="row" layout-align="end center" layout-sm="column" layout-wrap>
+            <md-button ng-click="gotoLogin()"> Login</md-button>
+        </div>
+    </md-toolbar>
+    <div layout="row" layout-align="center center">
+        <div flex></div>
+         <md-progress-circular md-mode="indeterminate" ng-show="signingup" style="position: absolute;left: 650px;top: 300px;z-index: 1;"></md-progress-circular>
+        <md-card flex=45 style="border-radius: 1%">
+            <md-card-content>
+                <form name="signupForm" novalidate ng-submit="signup()">
+                    <md-input-container class="md-block">
+                        <label>Name</label>
+                        <input required name="name" ng-model="userSignup.name">
+                        <div ng-messages="signupForm.name.$error" ng-show="signupForm.name.$touched">
+                            <div ng-message="required">Name is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Email</label>
+                        <input required type="email" name="email" ng-model="userSignup.email"
+                               ng-pattern="/^.+@.+\..+$/"/>
+                        <div ng-messages="signupForm.email.$error" role="alert"
+                             ng-show="signupForm.email.$touched || signupForm.email.$dirty">
+                            <div ng-message="required">Email is required.</div>
+                            <div ng-message="pattern">
+                                Your email must look like an e-mail address.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm="">
+                            <label>Username</label>
+                            <input required type="text" name="username" ng-model="userSignup.username"/>
+                            <div ng-messages="signupForm.username.$error" role="alert"
+                                 ng-show="signupForm.username.$touched || signupForm.username.$dirty">
+                                <div ng-message="required">Username is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-sm="">
+                            <label>Company Name</label>
+                            <input required type="text" name="company" ng-model="userSignup.company"/>
+                            <div ng-messages="signupForm.company.$error" role="alert"
+                                 ng-show="signupForm.company.$touched || signupForm.company.$dirty">
+                                <div ng-message="required">Company Name is required.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input minlength="6" required type="password" name="password" ng-model="userSignup.password">
+                        <div ng-messages="signupForm.password.$error"
+                             ng-show="signupForm.password.$touched  || signupForm.password.$dirty">
+                            <div ng-message="required">Password is required.</div>
+                            <div ng-message="minlength">Password must be minimun 6 characters long.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block">
+                        <label>Re-Enter Password</label>
+                        <input minlength="6" required type="password" name="re_pass" ng-model="userSignup.re_pass">
+                        <div ng-messages="signupForm.re_pass.$error"
+                             ng-show="signupForm.re_pass.$touched || signupForm.re_pass.$dirty">
+                            <div ng-message="required">Password is required.</div>
+                            <div ng-message="minlength">Password must be minimun 6 characters long.</div>
+                        </div>
+                    </md-input-container>
+                    <div layout="row" layout-align="center center" class="md-block">
+                        <md-button class="md-raised md-primary" type="submit">Sign Up</md-button>
+                    </div>
+                </form>
+
+            </md-card-content>
+        </md-card>
+        <div flex></div>
+    </div>
+</div>
